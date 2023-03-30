@@ -1,0 +1,66 @@
+Private Declare Sub openport Lib "c:\Windows\SysWOW64\TSCLIB.DLL" (ByVal PrinterName As String)
+Private Declare Sub closeport Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ()
+Private Declare Sub sendcommand Lib "c:\Windows\SysWOW64\TSCLIB.DLL" (ByVal command As String)
+Private Declare Sub setup Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ( _
+        ByVal LabelWidth As String, _
+        ByVal LabelHeight As String, _
+        ByVal Speed As String, _
+        ByVal Density As String, _
+        ByVal Sensor As String, _
+        ByVal Vertical As String, _
+        ByVal Offset As String)
+Private Declare Sub downloadpcx Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ( _
+        ByVal Filename As String, _
+        ByVal ImageName As String)
+Private Declare Sub barcode Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ( _
+        ByVal X As String, _
+    ByVal Y As String, _
+    ByVal CodeType As String, _
+    ByVal Height As String, _
+    ByVal Readable As String, _
+    ByVal rotation As String, _
+    ByVal Narrow As String, _
+    ByVal Wide As String, _
+    ByVal Code As String)
+Private Declare Sub printerfont Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ( _
+    ByVal X As String, _
+    ByVal Y As String, _
+    ByVal FontName As String, _
+    ByVal rotation As String, _
+    ByVal Xmul As String, _
+    ByVal Ymul As String, _
+    ByVal Content As String)
+Private Declare Sub clearbuffer Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ()
+Private Declare Sub printlabel Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ( _
+    ByVal NumberOfSet As String, _
+    ByVal NumberOfCopy As String)
+Private Declare Sub formfeed Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ()
+Private Declare Sub nobackfeed Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ()
+Private Declare Sub windowsfont Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ( _
+    ByVal X As Integer, _
+    ByVal Y As Integer, _
+    ByVal fontheight As Integer, _
+    ByVal rotation As Integer, _
+    ByVal fontstyle As Integer, _
+    ByVal fontunderline As Integer, _
+    ByVal FaceName As String, _
+    ByVal TextContent As String)
+
+Private Declare Sub windowsfontU Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ( _
+    ByVal X As Integer, _
+    ByVal Y As Integer, _
+    ByVal fontheight As Integer, _
+    ByVal rotation As Integer, _
+    ByVal fontstyle As Integer, _
+    ByVal fontunderline As Integer, _
+    ByVal FaceName As String, _
+    ByVal TextContent As String)
+
+Private Declare Sub about Lib "c:\Windows\SysWOW64\TSCLIB.DLL" ()
+
+Private Declare Function isusbportready Lib "c:\Windows\SysWOW64\TSCLIB.DLL" () As Integer
+Private Declare Function usbportqueryprinter Lib "c:\Windows\SysWOW64\TSCLIB.DLL" () As Integer
+Private Declare Function usbportwrite Lib "c:\Windows\SysWOW64\TSCLIB.DLL" (ByVal command As String) As Integer
+
+
+
